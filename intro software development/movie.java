@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Main {
     public static void main(String[] args) {
         // TODO 1: Declare and initialize variables
@@ -9,7 +11,7 @@ public class Main {
 
         // TODO 2: Calculate total price
         double totalPrice = numberOfTickets * pricePerTicket;
-        System.out.println("Total Price: ₹" + totalPrice);
+        DecimalFormat df = new DecimalFormat("#0.00");
 
         // TODO 3: Create username by concatenating first and last name in lowercase
         String username = (firstName + lastName).toLowerCase();
@@ -18,11 +20,12 @@ public class Main {
         String movieName = movieTitle.toUpperCase();
 
         // TODO 5: Final output
+        System.out.println("Congratulations!! You have successfully booked the tickets\n");
         System.out.println("Username: " + username);
         System.out.println("Movie Name: " + movieName);
         System.out.println("Number of Tickets: " + numberOfTickets);
-        System.out.println("Price per Ticket: ₹" + pricePerTicket);
-        System.out.println("Total Cost: ₹" + totalPrice);
+        System.out.println("Price per Ticket: ₹" + df.format(pricePerTicket));
+        System.out.println("Total Cost: ₹" + df.format(totalPrice));
 
         // Thank-you message
         System.out.println("Thank you for choosing us for booking your movie tickets");
