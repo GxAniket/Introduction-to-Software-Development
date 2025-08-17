@@ -25,3 +25,7 @@ public class Main {
         System.out.println("Area of the square with side " + sideOfSquare + " is: " + areaOfSquare);
     }
 }
+
+
+//output
+//Area of the square with side 5.2 is: 27.040000000000003
