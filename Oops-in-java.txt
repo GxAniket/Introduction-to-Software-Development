@@ -1,0 +1,149 @@
+1. Inheritance in Java
+
+Definition:
+Inheritance is when one class acquires properties and methods from another class using the extends keyword. It provides code reusability and supports method overriding.
+
+Example: Single Inheritance
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();   // Inherited from Animal
+        d.bark();  // Own method
+    }
+}
+
+
+Output:
+
+This animal eats food
+Dog barks
+
+2. Encapsulation in Java
+
+Definition:
+Encapsulation = Data Hiding + Controlled Access.
+We make variables private and provide public getters & setters for controlled access.
+
+Example:
+class Student {
+    private String name;
+    private int age;
+
+    // Setters
+    public void setName(String n) { name = n; }
+    public void setAge(int a) { 
+        if(a > 0) age = a; 
+        else System.out.println("Invalid age");
+    }
+
+    // Getters
+    public String getName() { return name; }
+    public int getAge() { return age; }
+}
+
+public class EncapsulationExample {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.setName("Aniket");
+        s.setAge(21);
+
+        System.out.println("Name: " + s.getName());
+        System.out.println("Age: " + s.getAge());
+    }
+}
+
+3. Polymorphism in Java
+
+Definition:
+Polymorphism = One name, many forms.
+Two types:
+
+Compile-time Polymorphism (Overloading) → Same method name, different parameters.
+
+Runtime Polymorphism (Overriding) → Same method name, same parameters in parent & child.
+
+Example: Method Overloading (Compile-time)
+class MathOps {
+    int add(int a, int b) { return a+b; }
+    int add(int a, int b, int c) { return a+b+c; }
+}
+
+public class OverloadingExample {
+    public static void main(String[] args) {
+        MathOps m = new MathOps();
+        System.out.println(m.add(10, 20));       
+        System.out.println(m.add(10, 20, 30));   
+    }
+}
+
+
+Output:
+
+30
+60
+
+Example: Method Overriding (Runtime)
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class OverridingExample {
+    public static void main(String[] args) {
+        Animal a = new Dog();  // parent reference, child object
+        a.sound(); // Calls Dog's version (Runtime)
+    }
+}
+
+
+Output:
+
+Dog barks
+
+4. Abstraction in Java
+
+Definition:
+Abstraction = Hiding implementation details and showing only essentials.
+
+Using abstract classes or interfaces.
+
+Example: Using Abstract Class
+abstract class Shape {
+    abstract void draw();  // abstract method
+}
+
+class Circle extends Shape {
+    void draw() { System.out.println("Drawing Circle"); }
+}
+
+public class AbstractionExample {
+    public static void main(String[] args) {
+        Shape s = new Circle(); // upcasting
+        s.draw();
+    }
+}
+
+
+Output:
+
+Drawing Circle
