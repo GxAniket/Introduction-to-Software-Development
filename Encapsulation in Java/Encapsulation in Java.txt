@@ -1,0 +1,30 @@
+What is Encapsulation in Java?
+
+Encapsulation = Data Hiding + Controlled Access
+It means binding data (variables) and methods (functions) together inside a single unit (class) and restricting direct access to data.
+
+Variables → private (hidden from outside world)
+
+Methods → public getters/setters (controlled access)
+
+
+
+Key Points
+
+Private variables = secure, can’t be accessed directly outside class.
+
+Public methods = provide controlled access (getters/setters).
+
+Helps in data hiding & better security.
+
+Real-life example → ATM Machine: We press buttons (methods) but don’t see internal code (data).
+
+
+
+Why Encapsulation is Important
+
+Data security → variables are hidden
+
+Code flexibility → easy to change code later
+
+Validation → can validate data before setting it
