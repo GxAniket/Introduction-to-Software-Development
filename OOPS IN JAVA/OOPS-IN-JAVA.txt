@@ -1,0 +1,97 @@
+What is OOP in Java?
+
+OOP (Object-Oriented Programming) in Java is a programming paradigm where everything revolves around objects—real-world entities having state (variables) and behavior (methods).
+
+It makes code:
+
+Reusable (via inheritance)
+
+Flexible (via polymorphism)
+
+Secure (via encapsulation)
+
+Maintainable (via abstraction)
+
+Main OOP Concepts in Java
+1. Class
+
+Blueprint/template for creating objects.
+
+class Car {
+    String color;
+    void drive() {
+        System.out.println("Car is driving");
+    }
+}
+
+2. Object
+
+Instance of a class; created using new keyword.
+
+Car c = new Car();  // object creation
+
+3. Encapsulation → Data Hiding
+
+Using private variables + public getters/setters
+
+class Student {
+    private String name;
+    public void setName(String n) { name = n; }
+    public String getName() { return name; }
+}
+
+4. Inheritance → Code Reusability
+
+Child class inherits properties/methods from parent class using extends.
+
+class Animal { void eat() { System.out.println("eating"); } }
+class Dog extends Animal { void bark() { System.out.println("barking"); } }
+
+5. Polymorphism → One name, many forms
+
+Compile-time (Overloading): Same method name, different parameters.
+
+Runtime (Overriding): Same method name, same parameters in parent & child.
+
+// Overloading
+class MathOps {
+    int add(int a, int b) { return a+b; }
+    int add(int a, int b, int c) { return a+b+c; }
+}
+
+// Overriding
+class Animal { void sound() { System.out.println("Animal sound"); } }
+class Dog extends Animal { void sound() { System.out.println("Dog barks"); } }
+
+6. Abstraction → Hiding details, showing essentials
+
+Abstract class → May have abstract & normal methods.
+
+Interface → Only method declarations (Java 8+ allows default & static).
+
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    void draw() { System.out.println("Drawing Circle"); }
+}
+
+Important Keywords in OOP
+
+class, object, extends, implements, super, this, static,
+abstract, final, interface, new, instanceof, @Override.
+
+Key Points to Remember
+
+Constructor → No return type, same name as class.
+
+Method Overloading → Compile-time; Method Overriding → Runtime.
+
+final → Variables (constants), methods (can’t override), classes (can’t inherit).
+
+Static → Belongs to class, not objects.
+
+Interfaces → Support multiple inheritance, classes don’t.
+
+Encapsulation → Private variables + getters/setters.
